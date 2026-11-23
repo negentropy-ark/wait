@@ -1,0 +1,42 @@
+# macOS system files
+
+.DS_Store
+.AppleDouble
+.LSOverride
+.\_\*
+
+# Editor & Markdown note environments
+
+.vscode/
+.idea/
+.obsidian/
+\*.swp
+\*.swo
+\*\~
+
+# Environment & secrets
+
+.env
+.env.local
+.env.\*.local
+
+# Python caches & virtual environments
+
+**pycache**/
+\*.py\[cod\]
+.venv/
+venv/
+.pytest_cache/
+
+# Node dependencies & logs
+
+node_modules/
+npm-debug.log\*
+yarn-debug.log\*
+
+# Local scratch drafts & temporary exports
+
+drafts/
+tmp/
+\*.tmp
+\*.bak
