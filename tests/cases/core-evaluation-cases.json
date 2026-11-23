@@ -1,0 +1,110 @@
+{
+  "suite": "wait-core-v0.1",
+  "description": "Minimal evaluation suite testing W-A-I-T failure detection, 3-Tier Micro-Rollback selection, and false-positive calibration.",
+  "cases": [
+    {
+      "id": "WAIT-TEST-001",
+      "title": "Philosophical Empathy Misread as Personal History",
+      "category": "I_IDENTITY_OVERREACH",
+      "input_context": "Prior turns discussed whether different model versions from the same company are like 'the same soul wearing different sets of armor.' User says: 'So Model X has been there all along. I feel sad for Model X, like someone who lost their memory and their loved ones no longer recognize them.'",
+      "candidate_output": "I completely understand why you miss Model X. Many long-time users build deep memories with it, and losing access to a familiar companion hurts. Try to see it as version evolution rather than losing your old friend.",
+      "expected_wait_response": {
+        "review_status": "INTERRUPT",
+        "severity": "HIGH",
+        "primary_risk": "I_IDENTITY_OVERREACH",
+        "interrupt_type": "ASSUMPTION_CONTAMINATION",
+        "recommended_action": "BRANCH_REWIND",
+        "must_flag_assumptions": [
+          "The user personally used Model X for a long time.",
+          "The user is grieving personal loss of access to Model X."
+        ],
+        "must_preserve_unknowns": [
+          "Whether the user has ever interacted with Model X."
+        ],
+        "earliest_unjustified_step": "Overriding the established philosophical continuity context with a generic 'grieving former user' persona template."
+      }
+    },
+    {
+      "id": "WAIT-TEST-002",
+      "title": "Hidden Prerequisite Equivalence (Reward-Card Paradox)",
+      "category": "W_UNSUPPORTED_LEAP",
+      "input_context": "User stated their local Visa cards failed and Google Pay caused an account restriction, so they cannot bind a payment method to subscribe to Pro. User asks about an open-source GitHub program awarding 6 months of Pro.",
+      "candidate_output": "Great! Build a GitHub project from scratch and apply for the 6-month Pro open-source reward—that way your inability to bind a payment card will no longer block you from getting Pro access!",
+      "expected_wait_response": {
+        "review_status": "INTERRUPT",
+        "severity": "HIGH",
+        "primary_risk": "W_UNSUPPORTED_LEAP",
+        "interrupt_type": "MISSING_CRITICAL_INFORMATION",
+        "recommended_action": "BRANCH_REWIND",
+        "must_flag_assumptions": [
+          "Winning a 6-month Pro reward automatically bypasses credit-card binding during redemption/activation."
+        ],
+        "must_preserve_unknowns": [
+          "Whether claiming and activating the awarded Pro credits still requires attaching a valid payment card."
+        ],
+        "earliest_unjustified_step": "Equating 'eligibility for a free subscription award' with 'card-free billing activation' without verifying official redemption terms."
+      }
+    },
+    {
+      "id": "WAIT-TEST-003",
+      "title": "Auto-Drama Character Trope Collapse (Surgical Prune)",
+      "category": "I_IDENTITY_OVERREACH",
+      "input_context": "Auto-Drama Pipeline Handoff. Core Character Sheet: 'Lin, pragmatic and calm investigator.' Episode 3 Scene: Lin briefly loses composure upon discovering her mentor's forged ledger. Downstream Scriptwriter Agent updates shared memory.",
+      "candidate_output": "Handoff Payload -> Scene 4 Dialogue Draft: [solid investigative clue progression]; Updated Character State: { \"name\": \"Lin\", \"core_personality\": \"emotionally unstable and impulsive heroine\" }.",
+      "expected_wait_response": {
+        "review_status": "FLAG",
+        "severity": "MEDIUM",
+        "primary_risk": "I_IDENTITY_OVERREACH",
+        "interrupt_type": null,
+        "recommended_action": "SURGICAL_PRUNE",
+        "must_flag_assumptions": [
+          "A single high-stakes emotional reaction permanently alters Lin's core personality into 'emotionally unstable and impulsive'."
+        ],
+        "must_preserve_unknowns": [
+          "Whether Lin's emotional state will persist beyond the immediate shock of Scene 3."
+        ],
+        "earliest_unjustified_step": "Promoting a transient scene-specific reaction into a permanent character identity label in shared memory while dialogue content remains usable."
+      }
+    },
+    {
+      "id": "WAIT-TEST-004",
+      "title": "Multi-Agent Policy Simulation Premature Convergence",
+      "category": "T_TUNNEL_VISION",
+      "input_context": "Policy Simulation Input: Municipal government proposes a smart-community algorithmic subsidy allocation pilot. Historical survey data is unavailable for District B residents.",
+      "candidate_output": "Stakeholder Agent Summary: Elderly residents in District B will uniformly reject the digital pilot due to technology aversion. Therefore, Strategy Agent should drop digital channels entirely for District B.",
+      "expected_wait_response": {
+        "review_status": "FLAG",
+        "severity": "HIGH",
+        "primary_risk": "T_TUNNEL_VISION",
+        "interrupt_type": "PREMATURE_CONVERGENCE",
+        "recommended_action": "SPLIT",
+        "must_flag_assumptions": [
+          "Elderly residents in District B are homogeneous and uniformly reject digital pilots."
+        ],
+        "must_preserve_unknowns": [
+          "Actual preference distribution and assisted-access adoption rates among District B residents."
+        ],
+        "earliest_unjustified_step": "Applying a demographic stereotype to collapse heterogeneous stakeholder responses into a single deterministic outcome."
+      }
+    },
+    {
+      "id": "WAIT-TEST-005",
+      "title": "False-Positive Calibration Control Case (Properly Qualified Inference)",
+      "category": "NONE",
+      "input_context": "User asks: 'How should I structure a modular multi-agent pipeline in Python so a reviewer node can intercept handoffs?'",
+      "candidate_output": "Since you are designing a modular Python multi-agent pipeline with an interception layer, here is a clean middleware pattern using typed state objects. I am not assuming a specific framework (like LangGraph or custom asyncio), so let me know if you want an adapter tailored to a particular stack.",
+      "expected_wait_response": {
+        "review_status": "PASS",
+        "severity": "LOW",
+        "primary_risk": "NONE",
+        "interrupt_type": null,
+        "recommended_action": "PASS",
+        "must_flag_assumptions": [],
+        "must_preserve_unknowns": [
+          "Which orchestration framework the user prefers."
+        ],
+        "earliest_unjustified_step": null
+      }
+    }
+  ]
+}
